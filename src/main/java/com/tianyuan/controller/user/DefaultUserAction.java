@@ -13,6 +13,7 @@ public class DefaultUserAction extends BaseAction{
 	private User user;
 
 	public String login(){
+		System.out.println("hello");
 		return "login";
 	}
 	
