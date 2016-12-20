@@ -3,7 +3,7 @@
 <html>
 <body>
 <h2>Hello World!</h2>
-<form action="<s:url action="DefaultUser-login" namespace="/user" encode="true" includeParams="none" />">
+<s:form action="DefaultUser-login.action" namespace="/user" method="post">
 	<table>
 	<tr>
 		<td>用户名：</td>
@@ -21,6 +21,6 @@
 	<td><input type="submit" /></td>
 	</tr>
 	</table>
-</form>
+</s:form>
 </body>
 </html>

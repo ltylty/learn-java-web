@@ -1,33 +1,29 @@
 package com.tianyuan.base;
 
+import java.util.Map;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.struts2.interceptor.RequestAware;
 import org.apache.struts2.interceptor.ServletRequestAware;
 import org.apache.struts2.interceptor.ServletResponseAware;
 
 import com.opensymphony.xwork2.ActionSupport;
 
-public class BaseAction extends ActionSupport implements ServletRequestAware,
-		ServletResponseAware {
+public class BaseAction extends ActionSupport implements RequestAware {
 
-	/**
-	 * 
+	private Map<String, Object> request;
+
+
+
+	/* (non-Javadoc)
+	 * @see org.apache.struts2.interceptor.RequestAware#setRequest(java.util.Map)
 	 */
-	private static final long serialVersionUID = 1L;
-	public HttpServletRequest request;
-	public HttpServletResponse response;
-
 	@Override
-	public void setServletResponse(HttpServletResponse paramHttpServletResponse) {
+	public void setRequest(Map<String, Object> request) {
 		// TODO Auto-generated method stub
-		this.response = paramHttpServletResponse;
-	}
-
-	@Override
-	public void setServletRequest(HttpServletRequest paramHttpServletRequest) {
-		// TODO Auto-generated method stub
-		this.request = paramHttpServletRequest;
+		this.request = request;
 	}
 
 }
