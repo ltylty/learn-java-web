@@ -1,7 +1,7 @@
 package com.tianyuan.controller.user;
 
 import com.tianyuan.base.BaseAction;
-import com.tianyuan.bean.User;
+import com.tianyuan.mapper.UserMapper;
 
 public class DefaultUserAction extends BaseAction{
 
@@ -10,20 +10,27 @@ public class DefaultUserAction extends BaseAction{
 	 */
 	private static final long serialVersionUID = 1L;
 
-	private User user;
+	private UserMapper userMapper;
 
-	public String login(){
+	public String login() {
 		System.out.println("hello");
 		return "login";
 	}
-	
-	public User getUser() {
-		return user;
+
+	/**
+	 * @return the userMapper
+	 */
+	public UserMapper getUserMapper() {
+		return userMapper;
 	}
 
-	public void setUser(User user) {
-		this.user = user;
+	/**
+	 * @param userMapper the userMapper to set
+	 */
+	public void setUserMapper(UserMapper userMapper) {
+		this.userMapper = userMapper;
 	}
 	
+
 	
 }
