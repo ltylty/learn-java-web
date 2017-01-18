@@ -1,17 +1,17 @@
 package com.tianyuan.dao;
 
-import com.tianyuan.bean.User;
+import com.tianyuan.bean.UserBean;
 
 public interface UserDao {
     int deleteByPrimaryKey(String userId);
 
-    int insert(User record);
+    int insert(UserBean record);
 
-    int insertSelective(User record);
+    int insertSelective(UserBean record);
 
-    User selectByPrimaryKey(String userId);
+    UserBean selectByPrimaryKey(String userId);
 
-    int updateByPrimaryKeySelective(User record);
+    int updateByPrimaryKeySelective(UserBean record);
 
-    int updateByPrimaryKey(User record);
+    int updateByPrimaryKey(UserBean record);
 }

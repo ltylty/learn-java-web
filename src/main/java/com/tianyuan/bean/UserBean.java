@@ -1,6 +1,6 @@
 package com.tianyuan.bean;
 
-public class User {
+public class UserBean {
     private String userId;
 
     private String userName;
