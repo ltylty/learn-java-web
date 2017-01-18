@@ -1,8 +1,9 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri ="/struts-tags" prefix ="s" %>
 <html>
 <body>
 <h2>Hello World!</h2>
-<form action="">
+<s:form action="DefaultUser-login.action" namespace="/user" method="post">
 	<table>
 	<tr>
 		<td>用户名：</td>
@@ -16,7 +17,10 @@
 		<input type="password" name="password" />
 		</td>
 	</tr>
+	<tr>
+	<td><input type="submit" /></td>
+	</tr>
 	</table>
-</form>
+</s:form>
 </body>
 </html>

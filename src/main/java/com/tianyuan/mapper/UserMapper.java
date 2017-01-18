@@ -1,6 +1,6 @@
-package com.tianyuan.bean;
+package com.tianyuan.mapper;
 
-public class User {
+public class UserMapper {
 	private String userId;
 	private String userName;
 	private String password;
