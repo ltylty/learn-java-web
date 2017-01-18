@@ -3,7 +3,6 @@ package com.tianyuan.controller.user;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.tianyuan.base.BaseAction;
-import com.tianyuan.mapper.UserMapper;
 import com.tianyuan.model.UserModel;
 import com.tianyuan.service.CoreUserService;
 

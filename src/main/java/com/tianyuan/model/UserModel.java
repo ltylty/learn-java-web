@@ -3,13 +3,13 @@
  */
 package com.tianyuan.model;
 
-import com.tianyuan.mapper.UserMapper;
+import com.tianyuan.bean.User;
 
 /**
- * @author WH1506041
- * @since 2016年12月20日
+ * @author wh1506041
+ * @since 2017年1月18日
  * 
  */
-public class UserModel extends UserMapper {
+public class UserModel extends User {
 
 }

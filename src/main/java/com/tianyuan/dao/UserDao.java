@@ -1,13 +1,17 @@
-/**
- * 
- */
 package com.tianyuan.dao;
 
-/**
- * @author WH1506041
- * @since 2016年12月20日
- * 
- */
-public interface UserDao {
+import com.tianyuan.bean.User;
 
+public interface UserDao {
+    int deleteByPrimaryKey(String userId);
+
+    int insert(User record);
+
+    int insertSelective(User record);
+
+    User selectByPrimaryKey(String userId);
+
+    int updateByPrimaryKeySelective(User record);
+
+    int updateByPrimaryKey(User record);
 }
