@@ -3,6 +3,9 @@
  */
 package com.tianyuan.dao.impl;
 
+import org.springframework.stereotype.Repository;
+
+import com.tianyuan.base.AbstractBaseDao;
 import com.tianyuan.bean.UserBean;
 import com.tianyuan.dao.UserDao;
 
@@ -11,7 +14,8 @@ import com.tianyuan.dao.UserDao;
  * @since 2016年12月20日
  * 
  */
-public class UserDaoImpl implements UserDao {
+@Repository("userDao")
+public class UserDaoImpl extends AbstractBaseDao implements UserDao {
 
 	/* (non-Javadoc)
 	 * @see com.tianyuan.dao.UserDao#deleteByPrimaryKey(java.lang.String)
@@ -19,6 +23,7 @@ public class UserDaoImpl implements UserDao {
 	@Override
 	public int deleteByPrimaryKey(String userId) {
 		// TODO Auto-generated method stub
+//		this.getSqlSession().delete("");
 		return 0;
 	}
 
