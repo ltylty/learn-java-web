@@ -1,4 +1,4 @@
-package com.tianyuan.bean;
+package com.tianyuan.model.user;
 
 public class UserBean {
     private String userId;

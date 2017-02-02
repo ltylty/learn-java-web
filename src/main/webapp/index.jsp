@@ -3,18 +3,18 @@
 <html>
 <body>
 <h2>Hello World!</h2>
-<s:form action="DefaultUser-login.action" namespace="/user" method="post">
+<s:form action="Login-login.action" namespace="/user" method="post">
 	<table>
 	<tr>
 		<td>用户名：</td>
 		<td>
-		<input type="text" name="userName" />
+		<input type="text" name="userParameter.userId" value="zhangsan"/>
 		</td>
 	</tr>
 	<tr>
 		<td>密码：</td>
 		<td>
-		<input type="password" name="password" />
+		<input type="password" name="userParameter.password" value="zhangsan"/>
 		</td>
 	</tr>
 	<tr>

@@ -1,17 +1,9 @@
 package com.tianyuan.dao;
 
-import com.tianyuan.bean.UserBean;
+import com.tianyuan.base.dao.BaseDao;
+import com.tianyuan.model.user.UserModel;
+import com.tianyuan.model.user.UserParameter;
 
-public interface UserDao {
-    int deleteByPrimaryKey(String userId);
-
-    int insert(UserBean record);
-
-    int insertSelective(UserBean record);
-
-    UserBean selectByPrimaryKey(String userId);
-
-    int updateByPrimaryKeySelective(UserBean record);
-
-    int updateByPrimaryKey(UserBean record);
+public interface UserDao extends BaseDao<UserParameter, UserModel>{
+    
 }

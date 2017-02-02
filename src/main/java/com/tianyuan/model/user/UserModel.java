@@ -1,9 +1,7 @@
 /**
  * 
  */
-package com.tianyuan.model;
-
-import com.tianyuan.bean.UserBean;
+package com.tianyuan.model.user;
 
 /**
  * @author wh1506041

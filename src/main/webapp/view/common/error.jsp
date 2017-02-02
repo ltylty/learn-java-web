@@ -4,7 +4,15 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	  
+	  	<script type="text/javascript">
+		$(function() {
+			$("#exception").hide();
+		})
+		
+		function detail(){
+			$("#exception").toggle();
+		}
+		</script>
 	</head>
 	<body>
 		<h1 align="center">
@@ -12,18 +20,7 @@
 		</h1>
 		
 		<div id="exception">
-		<%-- <s:property value="exception"/> --%>
-		<s:property value="exceptionStack"/>
+			<s:property value="exceptionStack"/>
 		</div>
-		
-	<script type="text/javascript">
-	$(function() {
-		$("#exception").hide();
-	})
-	
-	function detail(){
-		$("#exception").toggle();
-	}
-	</script>	
 	</body>
 </html>

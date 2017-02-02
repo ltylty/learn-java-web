@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.tianyuan.dao.UserDao">
-  <resultMap id="BaseResultMap" type="com.tianyuan.bean.User">
+  <resultMap id="BaseResultMap" type="com.tianyuan.model.user.UserModel">
     <id column="user_id" jdbcType="VARCHAR" property="userId" />
     <result column="user_name" jdbcType="VARCHAR" property="userName" />
     <result column="password" jdbcType="VARCHAR" property="password" />
@@ -9,23 +9,30 @@
   <sql id="Base_Column_List">
     user_id, user_name, password
   </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+  <select id="selectOneByParameter" parameterType="com.tianyuan.model.user.UserParameter" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
     from user
     where user_id = #{userId,jdbcType=VARCHAR}
   </select>
+  
+  <select id="selectListByParameter" parameterType="com.tianyuan.model.user.UserParameter" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from user
+  </select>
+  
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
     delete from user
     where user_id = #{userId,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="com.tianyuan.bean.User">
+  <insert id="insert" parameterType="com.tianyuan.model.user.UserBean">
     insert into user (user_id, user_name, password
       )
     values (#{userId,jdbcType=VARCHAR}, #{userName,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.tianyuan.bean.User">
+  <insert id="insertSelective" parameterType="com.tianyuan.model.user.UserBean">
     insert into user
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="userId != null">
@@ -50,7 +57,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.tianyuan.bean.User">
+  <update id="updateByPrimaryKeySelective" parameterType="com.tianyuan.model.user.UserBean">
     update user
     <set>
       <if test="userName != null">
@@ -62,7 +69,7 @@
     </set>
     where user_id = #{userId,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.tianyuan.bean.User">
+  <update id="updateByPrimaryKey" parameterType="com.tianyuan.model.user.UserBean">
     update user
     set user_name = #{userName,jdbcType=VARCHAR},
       password = #{password,jdbcType=VARCHAR}

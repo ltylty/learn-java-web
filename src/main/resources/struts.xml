@@ -2,18 +2,31 @@
         "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
         "http://struts.apache.org/dtds/struts-2.0.dtd">
 <struts>
-	<package name="gloab-package" extends="struts-default" >
+	<constant name="struts.devMode" value="true"/>
+	<package name="gloab-package" extends="struts-default">
+		<interceptors>
+			<interceptor-stack name="appDefaultStack">
+				<!-- <interceptor-ref name="timer"/> -->
+				<interceptor-ref name="defaultStack">
+					<param name="exception.logEnabled">true</param>
+					<param name="exception.logLevel">ERROR</param>
+				</interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+
+		<default-interceptor-ref name="appDefaultStack" />
 		<global-results>
 			<result name="error">/view/common/error.jsp</result>
 			<result name="success">/view/common/success.jsp</result>
+			<result name="fail">/view/common/fail.jsp</result>
 		</global-results>
 
 		<global-exception-mappings>
 			<exception-mapping exception="Exception" result="error" />
 		</global-exception-mappings>
 	</package>
-	
-	
+
+
 	<include file="struts/struts-user.xml"></include>
-	
+
 </struts>

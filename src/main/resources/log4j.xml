@@ -1,28 +1,35 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE log4j:configuration PUBLIC "-//APACHE//DTD LOG4J 1.2//EN" 
     "http://logging.apache.org/log4j/1.2/apidocs/org/apache/log4j/xml/doc-files/log4j.dtd">
- 
+
 <log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
-     
-    <appender name="STDOUT" class="org.apache.log4j.ConsoleAppender">
-       <layout class="org.apache.log4j.PatternLayout"> 
-          <param name="ConversionPattern" value="%d %-5p %c.%M:%L - %m%n"/> 
-       </layout> 
-    </appender>
-  
-    <!-- specify the logging level for loggers from other libraries -->
-    <logger name="com.opensymphony">
-        <level value="DEBUG" />
-    </logger>
- 
-    <logger name="org.apache.struts2">
-         <level value="DEBUG" />
-    </logger>
-   
-   <!-- for all other loggers log only info and above log messages -->
-     <root>
-        <priority value="INFO"/> 
-        <appender-ref ref="STDOUT" /> 
-     </root> 
-     
+
+	<appender name="Console" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d %-5p %c.%M:%L - %m%n" />
+		</layout>
+	</appender>
+
+	<appender name="File" class="org.apache.log4j.DailyRollingFileAppender">
+		<errorHandler class="org.apache.log4j.helpers.OnlyOnceErrorHandler" />
+		<!-- 日志文件位置 -->
+		<param name="File" value="/usr/local/log/toLearn.log" />
+		<!-- 是否在重新启动服务时，在原有的基础上追加日志 -->
+		<param name="Append" value="true" />
+
+		<param name="DatePattern" value="'.'yyyy-MM-dd" />
+		<!-- 输出内容格式 -->
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d %-5p [%c] %m%n" />
+		</layout>
+	</appender>
+
+	
+
+	<root>
+		<level value="DEBUG" />
+		<appender-ref ref="Console" />
+		<appender-ref ref="File" />
+	</root>
+
 </log4j:configuration> 
