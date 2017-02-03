@@ -1,1 +1,2 @@
-使用struts2 mybatis spring搭建
+使用struts2 mybatis spring搭建,action、service、dao中通用接口的实现都用抽象类实现。
+mybatis generator自动生成dao与sql不够灵活，可以使用velocity模板自定义生成action、dao、service、sql。
